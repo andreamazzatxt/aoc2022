@@ -52,3 +52,27 @@ export const invert = <T>(matrix: T[][]) => {
 }
 
 export const times = (n: number) => range(0, n - 1)
+
+export const unique = <T>(a: T[]) => [...new Set(a)]
+
+export const isUnique = <T>(a: T[]) => unique(a).length === a.length
+
+export const scanFor = <T>(
+  a: T[],
+  patternLength: number,
+  checkFunction: (a: T[]) => boolean,
+) =>
+  a.find((_, idx, array) => {
+    const candidate = array.slice(idx, idx + patternLength)
+    return checkFunction(candidate)
+  })
+
+export const scanForIndex = <T>(
+  a: T[],
+  patternLength: number,
+  checkFunction: (a: T[]) => boolean,
+) =>
+  a.findIndex((_, idx, array) => {
+    const candidate = array.slice(idx, idx + patternLength)
+    return checkFunction(candidate)
+  })
