@@ -1,4 +1,5 @@
 import run from "aocrunner"
+import { log, table } from "../utils/console"
 
 const parseInput = (rawInput: string) => rawInput
 
