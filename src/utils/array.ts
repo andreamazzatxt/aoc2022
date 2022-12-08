@@ -76,3 +76,17 @@ export const scanForIndex = <T>(
     const candidate = array.slice(idx, idx + patternLength)
     return checkFunction(candidate)
   })
+
+export const matrixForEach = <T>(
+  matrix: T[][],
+  callback: (cell: T, row: T[], column: T[], x: number, y: number) => void,
+) => {
+  range(0, matrix.length - 1).forEach((y) => {
+    const row = matrix[y]
+    range(0, row.length - 1).forEach((x) => {
+      const column = matrix.map((l) => l[x])
+      const cell = matrix[y][x]
+      callback(cell, row, column, x, y)
+    })
+  })
+}
