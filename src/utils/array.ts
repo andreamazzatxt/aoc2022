@@ -53,6 +53,11 @@ export const invert = <T>(matrix: T[][]) => {
 
 export const times = (n: number) => range(0, n - 1)
 
+export const timesEach = (
+  n: number,
+  callback: (value: number, index: number, array: number[]) => void,
+) => range(0, n - 1).forEach(callback)
+
 export const unique = <T>(a: T[]) => [...new Set(a)]
 
 export const isUnique = <T>(a: T[]) => unique(a).length === a.length

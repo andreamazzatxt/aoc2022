@@ -1,3 +1,5 @@
 export * from "./letters.js"
 export * from "./array.js"
 export * from "./console.js"
+export * from "./types.js"
+export * from "./matrix.js"
