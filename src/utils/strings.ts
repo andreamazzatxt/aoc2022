@@ -1,3 +1,7 @@
+export const EMPTY_LINE = /\n\n/
+
+export const NEW_LINE = /\n/
+
 export const letters = [
   "",
   "a",

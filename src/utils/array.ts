@@ -51,7 +51,7 @@ export const invert = <T>(matrix: T[][]) => {
   return range(0, maxLen - 1).map((idx) => [...matrix.map((line) => line[idx])])
 }
 
-export const times = (n: number) => range(0, n - 1)
+export const times = (n: number) => (n === 0 ? [] : range(0, n - 1))
 
 export const timesEach = (
   n: number,
